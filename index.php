@@ -1,8 +1,6 @@
 <?php
     include 'php\setting.php';
 ?>
-<<<<<<< HEAD
-=======
 <!DOCTYPE html>
 <html lang="ru-RU">
     <head>
@@ -20,5 +18,4 @@
         </div>
     </body>
     <script src="js/index.js"></script>
->>>>>>> 43bd361f7dcfcb3f16f135c6adc13a464e161251
 </html>
