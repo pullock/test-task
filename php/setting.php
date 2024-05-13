@@ -12,6 +12,4 @@
     $sql = "CREATE DATABASE IF NOT EXISTS example1";
     // выполняем SQL-выражение
     $conn->exec($sql);
-
-    
 ?>
