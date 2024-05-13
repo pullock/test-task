@@ -21,13 +21,20 @@
     $conn->exec($sql);
 
     if (isset($_POST["name"]) && isset($_POST["password"]) && isset($_POST["password_2"])) {
+        $conn = new PDO("mysql:host=localhost;dbname=example1", "root", "");
+        
+        // $name = $_POST["name"];
+        // $password = $_POST["password"];
+        // $password_2 = $_POST["password_2"];
 
-        $name = $_POST["name"];
-        $password = $_POST["password"];
-        $password_2 = $_POST["password_2"];
+        $sql = "INSERT INTO users (name, password, password_2) VALUES (:name, :password, :password_2)";
 
-        $sql = "INSERT INTO users (name, password, password_2) VALUES ($name, $password, $password_2)";
-        $conn->exec($sql);
+        $stmt = $conn->prepare($sql);
+
+        $stmt->bindValue(":name", $_POST["name"]);
+        $stmt->bindValue(":password", $_POST["password"]);
+        $stmt->bindValue(":password_2", $_POST["password_2"]);
+        $stmt->execute();
         header('Location: index.php', true, 303);
     }
 ?>
