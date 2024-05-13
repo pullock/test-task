@@ -9,8 +9,9 @@
     $conn = new PDO("mysql:host=localhost", "root", "");
      
     // SQL-выражение для создания базы данных
-    $sql = "CREATE IF NOT EXISTS DATABASE example-1";
+    $sql = "CREATE DATABASE IF NOT EXISTS example1";
     // выполняем SQL-выражение
     $conn->exec($sql);
-    echo "Database has been created";
+
+    
 ?>
