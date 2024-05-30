@@ -11,12 +11,14 @@
     </head>
     <body>
         <div class="main__block">
-            <div class="form__enter">
+            <div class="form__reg">
                 <form action="">
-                    <div class="block__input"><input type="text" placeholder="Email или телефон"></div>
+                    <div class="block__input"><input type="text" placeholder="Имя"></div>
+                    <div class="block__input"><input type="text" placeholder="Email"></div>
+                    <div class="block__input"><input type="text" placeholder="Телефон"></div>
                     <div class="block__input"><input type="password" placeholder="Пароль"></div>
-                    <div class="block__input"><input type="submit" value="Войти"></div>
-                    <div class="block__input"><a href="registration.php">Регистрация</a></div>
+                    <div class="block__input"><input type="password" placeholder="Пароль повторно"></div>
+                    <div class="block__input"><input type="submit" value="Зарегистрироваться"></div>
                 </form>
             </div>
         </div>

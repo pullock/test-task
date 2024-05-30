@@ -15,13 +15,70 @@
   min-height: 100vh;
   position: relative;
 }
-.main__block .registr__form {
-  width: 600px;
-  height: 300px;
-  border: 1px solid black;
-  padding: 20px 20px;
+.main__block .form__enter {
+  width: 300px;
+  height: auto;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border: 2px solid gray;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+.main__block .form__enter .block__input {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 0;
+}
+.main__block .form__enter .block__input input {
+  width: 100%;
+  font-size: 22px;
+  border: none;
+  border-bottom: 1px solid gray;
+}
+.main__block .form__enter .block__input input[type=submit] {
+  border: 1px solid gray;
+}
+
+.main__block .form__reg {
+  width: 300px;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid gray;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+.main__block .form__reg .block__input {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 0;
+}
+.main__block .form__reg .block__input input {
+  width: 100%;
+  font-size: 22px;
+  border: none;
+  border-bottom: 1px solid gray;
+}
+.main__block .form__reg .block__input input[type=submit] {
+  border: 1px solid gray;
+}
+.main__block .form__reg .block__input input[type=button] {
+  border: 1px solid gray;
+  margin-left: 5px;
+}
+.main__block .form__reg .block__input input[type=button]:hover {
+  background-color: gray;
+}
+.main__block .form__reg .block__input input[type=button]:active {
+  background-color: rgb(184, 184, 184);
 }/*# sourceMappingURL=style.css.map */
