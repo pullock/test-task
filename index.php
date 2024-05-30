@@ -1,6 +1,3 @@
-<?php
-    include 'php\setting.php';
-?>
 <!DOCTYPE html>
 <html lang="ru-RU">
     <head>
