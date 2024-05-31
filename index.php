@@ -1,5 +1,6 @@
 <?php
     include 'php/create-table.php';
+    include 'php/reg.php';
 ?>
 <!DOCTYPE html>
 <html lang="ru-RU">
