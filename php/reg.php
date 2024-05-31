@@ -8,11 +8,19 @@
 
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-        $sql = "INSERT INTO users (user_name, user_mail, user_tel, user_password)
-        VALUES ('$name', '$emal', $tel, '$pass')";
-        $conn->exec($sql);
+        $stmt = $conn->prepare("SELECT id, firstname, lastname FROM MyGuests");
 
-        $conn = null;
+        $stmt->execute();
+
+        if ($stmt->fetch(PDO::FETCH_ASSOC)) {
+            $answer = 'Введенные вами данные уже используются...';
+        } else {
+            $sql = "INSERT INTO users (user_name, user_mail, user_tel, user_password)
+            VALUES ('$name', '$emal', $tel, '$pass')";
+            $conn->exec($sql);
+
+            $conn = null;
+        }
 
     }
 ?>
