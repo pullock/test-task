@@ -1,3 +1,6 @@
+<?php
+    include 'php/create-table.php';
+?>
 <!DOCTYPE html>
 <html lang="ru-RU">
     <head>
