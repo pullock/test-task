@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     include 'php/reg.php';
 ?>
 <!DOCTYPE html>

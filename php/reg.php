@@ -1,8 +1,6 @@
 <?
-    $servername = "MySQL-8.2";
-    $username = "root";
-    $password = "";
-    $dbname = "users";
+    
+    include 'connect.php';
 
     $answer = '';
 
@@ -23,14 +21,20 @@
 
         $stmt->execute();
 
-        if ($stmt->fetch(PDO::FETCH_ASSOC)) {
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($result) {
             $answer = 'Введенные вами данные уже используются...';
         } else {
             $sql = "INSERT INTO users (user_name, user_mail, user_tel, user_password)
-            VALUES ('$name', '$emal', '$tel', '$pass')";
+            VALUES ('$name', '$email', '$tel', '$pass')";
             $conn->exec($sql);
 
             $conn = null;
+
+            $_SESSION['name'] = $name;
+            $_SESSION['tel'] = $tel ;
+            $_SESSION['email'] = $email;
 
             header("Location: main-page.php");
             exit();

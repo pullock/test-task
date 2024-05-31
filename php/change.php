@@ -1,8 +1,6 @@
 <?php
-    $servername = "MySQL-8.2";
-    $username = "root";
-    $password = "";
-    $dbname = "users";
+
+    include 'connect.php';
 
     if (isset($_POST['name']) OR isset($_POST['email']) OR isset($_POST['tel']) OR isset($_POST['password'])){
 
