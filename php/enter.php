@@ -4,8 +4,9 @@
     $password = "";
     $dbname = "users";
 
+    $answer = '';
+
     if (isset($_POST['login']) AND isset($_POST['password'])){
-        $answer = '';
 
         $login = $_POST['login'];
         $password_enter = $_POST['password'];

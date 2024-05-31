@@ -18,6 +18,7 @@
     <body>
         <div class="main__block">
             <div class="form__enter">
+                <div><?=  $answer ?></div>
                 <form action="" method="POST">
                     <div class="block__input"><input type="text" name="login" placeholder="Email или телефон"></div>
                     <div class="block__input"><input type="password" name="password" placeholder="Пароль"></div>
