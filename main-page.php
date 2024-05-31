@@ -1,3 +1,8 @@
+<?php
+    session_start();
+
+    include 'php/change.php';
+?>
 <!DOCTYPE html>
 <html lang="ru-RU">
     <head>
@@ -12,10 +17,18 @@
     <body>
         <div class="main__block">
             <div class="form__reg">
-                    <div class="block__input"><input type="text" placeholder="Имя"><input type="button" value="Изменить"></div>
-                    <div class="block__input"><input type="text" placeholder="Email"><input type="button" value="Изменить"></div>
-                    <div class="block__input"><input type="text" placeholder="Телефон"><input type="button" value="Изменить"></div>
-                    <div class="block__input"><input type="password" placeholder="Пароль"><input type="button" value="Изменить"></div>
+                    <form action="" method="POST">
+                        <div class="block__input"><input type="text" name="name" placeholder="<?= $_SESSION['name'] ?>"><input type="submit" value="Изменить"></div>
+                    </form>
+                    <form action="" method="POST">
+                        <div class="block__input"><input type="text" name="email" placeholder="<?= $_SESSION['email'] ?>"><input type="submit" value="Изменить"></div>
+                    </form>
+                    <form action="" method="POST">
+                        <div class="block__input"><input type="text" name="tel" placeholder="<?= $_SESSION['tel'] ?>"><input type="submit" value="Изменить"></div>
+                    </form>
+                    <form action="" method="POST">
+                        <div class="block__input"><input type="password" name="password" placeholder="Пароль"><input type="submit" value="Изменить"></div>
+                    </form>
             </div>
         </div>
     </body>

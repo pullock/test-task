@@ -1,14 +1,25 @@
 <?
-    if (isset($_POST['name']) AND isset($_POST['emal']) AND isset($_POST['tel']) AND isset($_POST['pass'])){
+    $servername = "MySQL-8.2";
+    $username = "root";
+    $password = "";
+    $dbname = "users";
 
-        $name = mysqli_real_escape_string($_POST['name']);
-        $emal = mysqli_real_escape_string($_POST['emal']);
-        $tel = mysqli_real_escape_string($_POST['tel']);
-        $pass = mysqli_real_escape_string($_POST['pass']);
+    $answer = '';
+
+    if (isset($_POST['password']) AND $_POST['password'] != $_POST['password_two']){
+        
+        $answer = 'Пароли не совпадают!';
+
+    } else if (isset($_POST['name']) AND isset($_POST['email']) AND isset($_POST['tel']) AND isset($_POST['password'])){
+
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $tel = $_POST['tel'];
+        $pass = $_POST['password'];
 
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-        $stmt = $conn->prepare("SELECT id, firstname, lastname FROM MyGuests");
+        $stmt = $conn->prepare("SELECT user_name, user_mail, user_tel FROM users WHERE user_name='$name' OR user_mail='$email' OR user_tel='$tel'");
 
         $stmt->execute();
 
@@ -16,10 +27,13 @@
             $answer = 'Введенные вами данные уже используются...';
         } else {
             $sql = "INSERT INTO users (user_name, user_mail, user_tel, user_password)
-            VALUES ('$name', '$emal', $tel, '$pass')";
+            VALUES ('$name', '$emal', '$tel', '$pass')";
             $conn->exec($sql);
 
             $conn = null;
+
+            header("Location: main-page.php");
+            exit();
         }
 
     }

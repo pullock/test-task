@@ -15,7 +15,7 @@
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     user_name VARCHAR(30) NOT NULL,
     user_mail VARCHAR(30) NOT NULL,
-    user_tel INT(10),
+    user_tel VARCHAR(30) NOT NULL,
     user_password VARCHAR(30) NOT NULL
     )";
 
